@@ -2,7 +2,7 @@
 FROM quay.io/keycloak/keycloak:24.0.1
 
 RUN cat /etc/redhat-release
-RUN yum install fuse-overlayfs -y
+RUN dnf install fuse-overlayfs -y
 RUN ls -l /usr/bin/fuse-overlayfs
 RUN export STORAGE_OPTS="overlay.mount_program=/usr/bin/fuse-overlayfs" 
 RUN echo $STORAGE_OPTS
